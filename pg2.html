@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Information and Culture of Some Countries</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+           background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;  
+        }
+
+
+        /* Header Styles */
+        header {
+            background: rgba(0, 0, 0); /* Updated for a slight transparency effect */
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+
+
+        header h1 {
+            font-size: 2.5em; /* Inline style adjusted */
+        }
+
+
+        /* Main Section Styles */
+        main {
+            padding: 20px;
+        }
+
+
+        section#info {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+
+        section#info h2 {
+            color: #060a0e; /* Color for the section heading */
+            margin-bottom: 20px;
+        }
+
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #047e41;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+
+        thead {
+            background: #333;
+            color: #fff;
+        }
+
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            color: #fff; /* Ensure text is white on dark background */
+        }
+
+
+        tr:nth-child(even) {
+            background:#154601; /* Slightly different shade for alternating rows */
+        }
+
+
+        /*tr:hover {
+            background-color: #000;
+            color: #fff;
+        }*/
+
+
+        th {
+            font-weight: bold;
+            border-bottom: 2px solid #ddd;
+        }
+
+
+        td {
+            border-bottom: 1px solid #ddd;
+        }
+
+
+        .country-image {
+            width: 100px;
+            height: auto;
+            border-radius: 4px;
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            table {
+                font-size: 14px;
+            }
+
+
+            .country-image {
+                width: 80px;
+            }
+
+
+            th, td {
+                display: block;
+                width: 100%;
+                text-align: right;
+            }
+
+
+            td:before {
+                content: attr(data-label);
+                float: left;
+                font-weight: bold;
+                text-transform: capitalize;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="font-size: 2.5em; margin-bottom: 10px;">Explore Countries by Continent</h1>
+    </header>
+    <main>
+        <section id="info">
+            <h2 style="color: #28ad16; margin-bottom: 20px;">Country and Continent Information</h2>
+            <div class="table-container" style="overflow-x: auto;">
+                <table style="border: 1px solid #000000; border-radius: 8px; overflow: hidden;">
+                    <thead>
+                        <tr>
+                            <th>Continent</th>
+                            <th>Food</th>
+                            <th>Culture</th>
+                            <th>Famous People</th>
+                            <th>Materials</th>
+                            <th>Famous Places</th>
+                            <th>Image</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- United States -->
+                        <tr data-href="https://en.wikipedia.org/wiki/United_States">
+                            <td data-label="Continent">North America</td>
+                            <td data-label="Food">Burger, Hotdog</td>
+                            <td data-label="Culture">Diverse, Innovative</td>
+                            <td data-label="Famous People">George Washington, Steve Jobs</td>
+                            <td data-label="Materials">Steel, Technology</td>
+                            <td data-label="Famous Places">Statue of Liberty, Grand Canyon</td>
+                            <td data-label="Image"><img src="image usa.jpg" alt="United States" class="country-image"></td>
+                        </tr>
+                        <!-- Canada -->
+                        <tr data-href="https://en.wikipedia.org/wiki/Canada">
+                            <td data-label="Continent">North America</td>
+                            <td data-label="Food">Poutine, Maple Syrup</td>
+                            <td data-label="Culture">Multicultural, Friendly</td>
+                            <td data-label="Famous People">Justin Trudeau, Celine Dion</td>
+                            <td data-label="Materials">Timber, Oil</td>
+                            <td data-label="Famous Places">Niagara Falls, CN Tower</td>
+                            <td data-label="Image"><img src="image canada.jpg" alt="Canada" class="country-image"></td>
+                        </tr>
+                        <!-- South America -->
+                        <tr data-href="https://en.wikipedia.org/wiki/South_America">
+                            <td data-label="Continent">South America</td>
+                            <td data-label="Food">Feijoada, Caipirinha</td>
+                            <td data-label="Culture">Carnival, Samba</td>
+                            <td data-label="Famous People">Pele, Paulo Coelho</td>
+                            <td data-label="Materials">Iron Ore, Coffee</td>
+                            <td data-label="Famous Places">Amazon Rainforest, Christ the Redeemer</td>
+                            <td data-label="Image"><img src="image south america.jpg" alt="South America" class="country-image"></td>
+                        </tr>
+                        <!-- Europe -->
+                        <tr data-href="https://en.wikipedia.org/wiki/Western_Europe">
+                            <td data-label="Continent">Europe</td>
+                            <td data-label="Food">Baguette, Croissant</td>
+                            <td data-label="Culture">Elegant, Artistic</td>
+                            <td data-label="Famous People">Napoleon Bonaparte, Coco Chanel</td>
+                            <td data-label="Materials">Wine, Perfume</td>
+                            <td data-label="Famous Places">Eiffel Tower, Louvre Museum</td>
+                            <td data-label="Image"><img src="image europe.jpeg" alt="Europe" class="country-image"></td>
+                        </tr>
+                        <!-- Africa -->
+                        <tr data-href="https://en.wikipedia.org/wiki/Africa">
+                            <td data-label="Continent">Africa</td>
+                            <td data-label="Food">Biltong, Braai</td>
+                            <td data-label="Culture">Diverse Cultures, Vibrant Cities</td>
+                            <td data-label="Famous People">Nelson Mandela, Desmond Tutu</td>
+                            <td data-label="Materials">Gold, Diamonds</td>
+                            <td data-label="Famous Places">Table Mountain, Kruger National Park</td>
+                            <td data-label="Image"><img src="image africa.jpeg" alt="Africa" class="country-image"></td>
+                        </tr>
+                        <!-- Russia -->
+                        <tr data-href="https://en.wikipedia.org/wiki/Russia">
+                            <td data-label="Continent">Russia</td>
+                            <td data-label="Food">Borscht, Blini</td>
+                            <td data-label="Culture">Rich History, Diverse</td>
+                            <td data-label="Famous People">Leo Tolstoy, Vladimir Putin</td>
+                            <td data-label="Materials">Oil, Natural Gas</td>
+                            <td data-label="Famous Places">Red Square, Siberia</td>
+                            <td data-label="Image"><img src="image russia.jpg" alt="Russia" class="country-image"></td>
+                        </tr>
+                        <!-- South Korea -->
+                        <tr data-href="https://en.wikipedia.org/wiki/South_Korea">
+                            <td data-label="Continent">Asia</td>
+                            <td data-label="Food">Kimbap, Kimchi</td>
+                            <td data-label="Culture">Modern, Technological</td>
+                            <td data-label="Famous People">BTS, Kim Jong-un</td>
+                            <td data-label="Materials">Electronics, Textiles</td>
+                            <td data-label="Famous Places">Seoul, DMZ</td>
+                            <td data-label="Image"><img src="image korea.jpg" alt="South Korea" class="country-image"></td>
+                        </tr>
+                        <!-- Japan -->
+                        <tr data-href="https://en.wikipedia.org/wiki/Japan">
+                            <td data-label="Continent">Asia</td>
+                            <td data-label="Food">Sushi, Ramen</td>
+                            <td data-label="Culture">Traditional, Technologically Advanced</td>
+                            <td data-label="Famous People">Shigeru Miyamoto, Akira Kurosawa</td>
+                            <td data-label="Materials">Steel, Electronics</td>
+                            <td data-label="Famous Places">Mount Fuji, Tokyo</td>
+                            <td data-label="Image"><img src="image japan.jpg" alt="Japan" class="country-image"></td>
+                        </tr>
+                        <!-- China -->
+                        <tr data-href="https://en.wikipedia.org/wiki/China">
+                            <td data-label="Continent">Asia</td>
+                            <td data-label="Food">Dumplings, Peking Duck</td>
+                            <td data-label="Culture">Ancient, Modern</td>
+                            <td data-label="Famous People">Confucius, Xi Jinping</td>
+                            <td data-label="Materials">Silk, Electronics</td>
+                            <td data-label="Famous Places">Great Wall, Forbidden City</td>
+                            <td data-label="Image"><img src="image china.jpg" alt="China" class="country-image"></td>
+                        </tr>
+                        <!-- Australia -->
+                        <tr data-href="https://en.wikipedia.org/wiki/Australia">
+                            <td data-label="Continent">Australia</td>
+                            <td data-label="Food">Vegemite, Meat Pie</td>
+                            <td data-label="Culture">Laid-back, Multicultural</td>
+                            <td data-label="Famous People">Steve Irwin, Cate Blanchett</td>
+                            <td data-label="Materials">Opals, Wool</td>
+                            <td data-label="Famous Places">Great Barrier Reef, Sydney Opera House</td>
+                            <td data-label="Image"><img src="image australia.jpg" alt="Australia" class="country-image"></td>
+                        </tr>
+                        <!-- New Zealand -->
+                        <tr data-href="https://en.wikipedia.org/wiki/New_Zealand">
+                            <td data-label="Continent">New Zealand</td>
+                            <td data-label="Food">Pavlova, Kiwi Fruit</td>
+                            <td data-label="Culture">Maori Culture, Outdoor</td>
+                            <td data-label="Famous People">Edmund Hillary, Peter Jackson</td>
+                            <td data-label="Materials">Wool, Wine</td>
+                            <td data-label="Famous Places">Milford Sound, Mount Cook</td>
+                            <td data-label="Image"><img src="image new zealand.jpg" alt="New Zealand" class="country-image"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+
+
+
