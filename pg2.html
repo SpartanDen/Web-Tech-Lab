@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- Meta tags for character set, viewport settings, and compatibility -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Information and Culture of Some Countries</title>
+    <!-- Page title -->
+    <title>World Map and Its History</title>
+    <!-- External Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Internal CSS for styling -->
     <style>
         /* Basic Reset */
         * {
@@ -13,268 +19,68 @@
             box-sizing: border-box;
         }
 
-
         /* Body Styles */
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Playfair Display', serif;
+            background-color: #f8c58b;
             color: #333;
-           background: url('background.jpg') no-repeat center center fixed;
-            background-size: cover;  
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
         }
 
-
-        /* Header Styles */
-        header {
-            background: rgba(0, 0, 0); /* Updated for a slight transparency effect */
-            color: #ffffff;
-            padding: 20px;
+        /* Heading Styles */
+        h1 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 30px;
             text-align: center;
-        }
-
-
-        header h1 {
-            font-size: 2.5em; /* Inline style adjusted */
-        }
-
-
-        /* Main Section Styles */
-        main {
-            padding: 20px;
-        }
-
-
-        section#info {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-
-        section#info h2 {
-            color: #060a0e; /* Color for the section heading */
-            margin-bottom: 20px;
-        }
-
-
-        /* Table Styles */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: #047e41;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-
-        thead {
-            background: #333;
-            color: #fff;
-        }
-
-
-        th, td {
-            padding: 12px;
-            text-align: left;
-            color: #fff; /* Ensure text is white on dark background */
-        }
-
-
-        tr:nth-child(even) {
-            background:#154601; /* Slightly different shade for alternating rows */
-        }
-
-
-        /*tr:hover {
-            background-color: #000;
-            color: #fff;
-        }*/
-
-
-        th {
             font-weight: bold;
-            border-bottom: 2px solid #ddd;
         }
 
-
-        td {
-            border-bottom: 1px solid #ddd;
-        }
-
-
-        .country-image {
-            width: 100px;
+        /* Image Styles */
+        img {
+            max-width: 100%;
             height: auto;
-            border-radius: 4px;
-        }
-
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            table {
-                font-size: 14px;
-            }
-
-
-            .country-image {
-                width: 80px;
-            }
-
-
-            th, td {
-                display: block;
-                width: 100%;
-                text-align: right;
-            }
-
-
-            td:before {
-                content: attr(data-label);
-                float: left;
-                font-weight: bold;
-                text-transform: capitalize;
-            }
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1 style="font-size: 2.5em; margin-bottom: 10px;">Explore Countries by Continent</h1>
-    </header>
-    <main>
-        <section id="info">
-            <h2 style="color: #28ad16; margin-bottom: 20px;">Country and Continent Information</h2>
-            <div class="table-container" style="overflow-x: auto;">
-                <table style="border: 1px solid #000000; border-radius: 8px; overflow: hidden;">
-                    <thead>
-                        <tr>
-                            <th>Continent</th>
-                            <th>Food</th>
-                            <th>Culture</th>
-                            <th>Famous People</th>
-                            <th>Materials</th>
-                            <th>Famous Places</th>
-                            <th>Image</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- United States -->
-                        <tr data-href="https://en.wikipedia.org/wiki/United_States">
-                            <td data-label="Continent">North America</td>
-                            <td data-label="Food">Burger, Hotdog</td>
-                            <td data-label="Culture">Diverse, Innovative</td>
-                            <td data-label="Famous People">George Washington, Steve Jobs</td>
-                            <td data-label="Materials">Steel, Technology</td>
-                            <td data-label="Famous Places">Statue of Liberty, Grand Canyon</td>
-                            <td data-label="Image"><img src="image usa.jpg" alt="United States" class="country-image"></td>
-                        </tr>
-                        <!-- Canada -->
-                        <tr data-href="https://en.wikipedia.org/wiki/Canada">
-                            <td data-label="Continent">North America</td>
-                            <td data-label="Food">Poutine, Maple Syrup</td>
-                            <td data-label="Culture">Multicultural, Friendly</td>
-                            <td data-label="Famous People">Justin Trudeau, Celine Dion</td>
-                            <td data-label="Materials">Timber, Oil</td>
-                            <td data-label="Famous Places">Niagara Falls, CN Tower</td>
-                            <td data-label="Image"><img src="image canada.jpg" alt="Canada" class="country-image"></td>
-                        </tr>
-                        <!-- South America -->
-                        <tr data-href="https://en.wikipedia.org/wiki/South_America">
-                            <td data-label="Continent">South America</td>
-                            <td data-label="Food">Feijoada, Caipirinha</td>
-                            <td data-label="Culture">Carnival, Samba</td>
-                            <td data-label="Famous People">Pele, Paulo Coelho</td>
-                            <td data-label="Materials">Iron Ore, Coffee</td>
-                            <td data-label="Famous Places">Amazon Rainforest, Christ the Redeemer</td>
-                            <td data-label="Image"><img src="image south america.jpg" alt="South America" class="country-image"></td>
-                        </tr>
-                        <!-- Europe -->
-                        <tr data-href="https://en.wikipedia.org/wiki/Western_Europe">
-                            <td data-label="Continent">Europe</td>
-                            <td data-label="Food">Baguette, Croissant</td>
-                            <td data-label="Culture">Elegant, Artistic</td>
-                            <td data-label="Famous People">Napoleon Bonaparte, Coco Chanel</td>
-                            <td data-label="Materials">Wine, Perfume</td>
-                            <td data-label="Famous Places">Eiffel Tower, Louvre Museum</td>
-                            <td data-label="Image"><img src="image europe.jpeg" alt="Europe" class="country-image"></td>
-                        </tr>
-                        <!-- Africa -->
-                        <tr data-href="https://en.wikipedia.org/wiki/Africa">
-                            <td data-label="Continent">Africa</td>
-                            <td data-label="Food">Biltong, Braai</td>
-                            <td data-label="Culture">Diverse Cultures, Vibrant Cities</td>
-                            <td data-label="Famous People">Nelson Mandela, Desmond Tutu</td>
-                            <td data-label="Materials">Gold, Diamonds</td>
-                            <td data-label="Famous Places">Table Mountain, Kruger National Park</td>
-                            <td data-label="Image"><img src="image africa.jpeg" alt="Africa" class="country-image"></td>
-                        </tr>
-                        <!-- Russia -->
-                        <tr data-href="https://en.wikipedia.org/wiki/Russia">
-                            <td data-label="Continent">Russia</td>
-                            <td data-label="Food">Borscht, Blini</td>
-                            <td data-label="Culture">Rich History, Diverse</td>
-                            <td data-label="Famous People">Leo Tolstoy, Vladimir Putin</td>
-                            <td data-label="Materials">Oil, Natural Gas</td>
-                            <td data-label="Famous Places">Red Square, Siberia</td>
-                            <td data-label="Image"><img src="image russia.jpg" alt="Russia" class="country-image"></td>
-                        </tr>
-                        <!-- South Korea -->
-                        <tr data-href="https://en.wikipedia.org/wiki/South_Korea">
-                            <td data-label="Continent">Asia</td>
-                            <td data-label="Food">Kimbap, Kimchi</td>
-                            <td data-label="Culture">Modern, Technological</td>
-                            <td data-label="Famous People">BTS, Kim Jong-un</td>
-                            <td data-label="Materials">Electronics, Textiles</td>
-                            <td data-label="Famous Places">Seoul, DMZ</td>
-                            <td data-label="Image"><img src="image korea.jpg" alt="South Korea" class="country-image"></td>
-                        </tr>
-                        <!-- Japan -->
-                        <tr data-href="https://en.wikipedia.org/wiki/Japan">
-                            <td data-label="Continent">Asia</td>
-                            <td data-label="Food">Sushi, Ramen</td>
-                            <td data-label="Culture">Traditional, Technologically Advanced</td>
-                            <td data-label="Famous People">Shigeru Miyamoto, Akira Kurosawa</td>
-                            <td data-label="Materials">Steel, Electronics</td>
-                            <td data-label="Famous Places">Mount Fuji, Tokyo</td>
-                            <td data-label="Image"><img src="image japan.jpg" alt="Japan" class="country-image"></td>
-                        </tr>
-                        <!-- China -->
-                        <tr data-href="https://en.wikipedia.org/wiki/China">
-                            <td data-label="Continent">Asia</td>
-                            <td data-label="Food">Dumplings, Peking Duck</td>
-                            <td data-label="Culture">Ancient, Modern</td>
-                            <td data-label="Famous People">Confucius, Xi Jinping</td>
-                            <td data-label="Materials">Silk, Electronics</td>
-                            <td data-label="Famous Places">Great Wall, Forbidden City</td>
-                            <td data-label="Image"><img src="image china.jpg" alt="China" class="country-image"></td>
-                        </tr>
-                        <!-- Australia -->
-                        <tr data-href="https://en.wikipedia.org/wiki/Australia">
-                            <td data-label="Continent">Australia</td>
-                            <td data-label="Food">Vegemite, Meat Pie</td>
-                            <td data-label="Culture">Laid-back, Multicultural</td>
-                            <td data-label="Famous People">Steve Irwin, Cate Blanchett</td>
-                            <td data-label="Materials">Opals, Wool</td>
-                            <td data-label="Famous Places">Great Barrier Reef, Sydney Opera House</td>
-                            <td data-label="Image"><img src="image australia.jpg" alt="Australia" class="country-image"></td>
-                        </tr>
-                        <!-- New Zealand -->
-                        <tr data-href="https://en.wikipedia.org/wiki/New_Zealand">
-                            <td data-label="Continent">New Zealand</td>
-                            <td data-label="Food">Pavlova, Kiwi Fruit</td>
-                            <td data-label="Culture">Maori Culture, Outdoor</td>
-                            <td data-label="Famous People">Edmund Hillary, Peter Jackson</td>
-                            <td data-label="Materials">Wool, Wine</td>
-                            <td data-label="Famous Places">Milford Sound, Mount Cook</td>
-                            <td data-label="Image"><img src="image new zealand.jpg" alt="New Zealand" class="country-image"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-    </main>
+    <!-- Main heading of the page -->
+    <h1>Click on the map location to know more about the history behind them:</h1>
+    <!-- Image of the world map with clickable areas defined by the usemap attribute -->
+    <img src="world map.jpg" usemap="#worldmap" alt="World Map">
+    <!-- Defining a map with clickable areas corresponding to different regions -->
+    <map name="worldmap">
+        <!-- Area for India, defined by a polygon -->
+        <area shape="polygon" coords="1150,609,1166,591,1184,560,1204,533,1179,506,1137,477,1126,500,1106,526,1137,578,1146,598" href="https://en.wikipedia.org/wiki/Timeline_of_Indian_history" alt="Historical Events of India">
+         <!-- Area for Korea, defined by a circle -->
+        <area shape="circle" coords="1373,473,20" href="https://en.wikipedia.org/wiki/Korea" alt="Important Events of Korea">
+         <!-- Area for the United States, defined by a rectangle -->
+        <area shape="rectangle" coords="273,408,476,484" href="https://en.wikipedia.org/wiki/Category:Timelines_of_United_States_history_by_period" alt="Important Events of America">
+         <!-- Area for Canada, defined by a rectangle -->
+        <area shape="rectangle" coords="226,226,589,407" href="https://en.wikipedia.org/wiki/History_of_Canada" alt="Important Events of Canada">
+        <!-- Area for South America, defined by a polygon -->
+        <area shape="polygon" coords="504,587,461,656,484,713,505,741,493,840,486,877,511,918,529,880,528,871,557,814,603,770,642,729,662,669,600,651,560,612,513,589" href="https://en.wikipedia.org/wiki/History_of_South_America" alt="Important Events in South America">
+        <!-- Area for Africa, defined by a polygon -->
+        <area shape="polygon" coords="824,472,761,522,738,584,775,625,838,621,853,651,873,688,862,718,884,770,902,806,959,773,998,715,988,689,1018,632,1039,591,985,561,957,504,905,494,829" href="https://en.wikipedia.org/wiki/History_of_Africa" alt="Important events of Africa">
+         <!-- Area for Europe, defined by a rectangle -->
+        <area shape="rectangle" coords="771,338,916,476" href="https://en.wikipedia.org/wiki/History_of_Europe" alt="Important events of Europe">
+        <!-- Area for China, defined by a rectangle -->
+        <area shape="rectangle" coords="1086,411,1345,493" href="https://en.wikipedia.org/wiki/History_of_China" alt="Important events of China">
+         <!-- Area for Indo-China, defined by a rectangle -->
+        <area shape="rectangle" coords="1205,534,1470,687" href="https://en.wikipedia.org/wiki/Mainland_Southeast_Asia#:~:text=The%20term%20Indochina%20(originally%20Indo,%2C%20Laos%2C%20and%20Vietnam)." alt="Important events of Indo-China">
+        <!-- Area for Australia, defined by a polygon -->
+        <area shape="polygon" coords="1318,741,1320,802,1386,792,1455,828,1457,858,1484,788,1476,745,1438,692,1397,695,1350,720" href="https://en.wikipedia.org/wiki/History_of_Australia" alt="Important events of Australia">
+        <!-- Area for New Zealand, defined by a polygon -->
+        <area shape="polygon" coords="1542,870,1556,874,1574,851,1597,822,1573,807,1579,829,1564,846,1548,862" href="https://en.wikipedia.org/wiki/New_Zealand" alt="Important events of New Zealand">
+        <!-- Area for Siberia, defined by a circle -->
+        <area shape="circle" coords="1265,262,50" href="https://en.wikipedia.org/wiki/History_of_Siberia" alt="Important events of Siberia">
+    </map>
 </body>
 </html>
-
-
-
