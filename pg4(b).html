@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Handling Enhanced</title>
+    <script>
+        function displayCurrentTime() {
+            var d = new Date();
+            var s1=String(d.getHours()).padStart(2,'0');
+            var s2=String(d.getMinutes()).padStart(2,'0');
+            var s3=String(d.getSeconds()).padStart(2,'0');
+            var timeStr = s1 + ":" + s2 + ":" + s3;
+            document.timeForm.timeInput.value = timeStr;
+            setInterval(displayCurrentTime, 1000);
+        }
+
+        function validateRegistrationForm() {
+            var username = document.registrationForm.username.value;
+            var userPassword = document.registrationForm.password.value;
+            var confirmPassword = document.registrationForm.confirmPassword.value;
+            var email = document.registrationForm.email.value;
+
+            if (!username) {
+                alert("Username cannot be left blank");
+                return false;
+            } else if (userPassword.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return false;
+            } else if (userPassword !== confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            } else if (!validateEmail(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+            return true;
+        }
+
+        function validateEmail(email) {
+            var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        function mouseOver() {
+            document.getElementById('hoverText').innerHTML = "Mouse Over";
+        }
+
+        function mouseOut() {
+            document.getElementById('hoverText').innerHTML = "Mouse Out";
+        }
+
+        document.addEventListener("click", changeBackgroundColor, false);
+
+        function changeBackgroundColor() {
+            document.body.style.backgroundColor = "aqua";
+        }
+
+        function displayImageText() {
+            document.getElementById("imageText").innerHTML = "Panda";
+        }
+
+        function clearImageText() {
+            document.getElementById("imageText").innerHTML = "";
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <h2>Current Time Display</h2>
+        <form name="timeForm">
+            <input type="text" name="timeInput" >
+            <input type="button" value="Show Time" onclick="displayCurrentTime();">
+        </form>
+        <br /><br />
+
+        <form name="registrationForm" method="post" action="#" onsubmit="return validateRegistrationForm()">
+            Email: <input type="text" name="email" size="20" onblur="validateEmail(this.value)"><br /><br />
+            Username: <input type="text" name="username"><br /><br />
+            Password: <input type="password" name="password"><br /><br />
+            <input type="submit" value="Register">
+        </form>
+        <br /><br />
+
+        <p id="hoverText">Hover over the div zone</p>
+        <div onmouseover="mouseOver()" onmouseout="mouseOut()">
+            <h2>Inside the Division</h2>
+        </div>
+        <br /><br />
+
+        <div id="imageText"></div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqRHn5_7Q7JH7aLDxRmHMpZig8pHMTQZ_-VQ&s" id="image" onmouseover="displayImageText()" onmouseout="clearImageText();">
+    </center>
+</body>
+</html>
